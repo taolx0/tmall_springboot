@@ -163,7 +163,6 @@ public class ForeRESTController {
                     break;
             }
         }
-
         return c;
     }
 
@@ -177,6 +176,7 @@ public class ForeRESTController {
         return ps;
     }
 
+    //立即购买
     @GetMapping("forebuyone")
     public Object buyOne(int pid, int num, HttpSession session) {
         return buyOneAndAddCart(pid, num, session);
@@ -222,12 +222,14 @@ public class ForeRESTController {
         return Result.success(map);
     }
 
+    //添加购物车
     @GetMapping("foreaddCart")
     public Object addCart(int pid, int num, HttpSession session) {
         buyOneAndAddCart(pid, num, session);
         return Result.success();
     }
 
+    //查看购物车
     @GetMapping("forecart")
     public Object cart(HttpSession session) {
         User user = (User) session.getAttribute("user");
@@ -281,6 +283,7 @@ public class ForeRESTController {
         return Result.success(map);
     }
 
+    //查看订单
     @GetMapping("forebought")
     public Object bought(HttpSession session) {
         User user = (User) session.getAttribute("user");
@@ -291,11 +294,12 @@ public class ForeRESTController {
         return os;
     }
 
+
     @GetMapping("foreconfirmPay")
     public Object confirmPay(int oid) {
         Order o = orderService.get(oid);
         orderItemService.fill(o);
-        orderService.cacl(o);
+//        orderService.cacl(o);
         orderService.removeOrderFromOrderItem(o);
         return o;
     }

@@ -46,7 +46,7 @@ public class CategoryService {
         categoryDAO.delete(id);
     }
 
-    @Cacheable("'categories-one-'+ #p0")
+    @Cacheable(key = "'categories-one-' + #p0")
     public Category get(int id) {
         return categoryDAO.findOne(id);
     }
