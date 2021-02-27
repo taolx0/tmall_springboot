@@ -18,13 +18,11 @@ public class AdminPageController {
     @GetMapping(value = "/admin_category_edit")
     public String editCategory() {
         return "admin/editCategory";
-
     }
 
     @GetMapping(value = "/admin_order_list")
     public String listOrder() {
         return "admin/listOrder";
-
     }
 
     @GetMapping(value = "/admin_product_list")
@@ -64,7 +62,6 @@ public class AdminPageController {
     @GetMapping(value = "/admin_user_list")
     public String listUser() {
         return "admin/listUser";
-
     }
 
 }
