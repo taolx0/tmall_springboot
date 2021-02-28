@@ -1,7 +1,6 @@
 package com.how2java.tmall.web;
 
 import com.how2java.tmall.pojo.Category;
-import com.how2java.tmall.pojo.Product;
 import com.how2java.tmall.service.CategoryService;
 import com.how2java.tmall.service.ProductImageService;
 import com.how2java.tmall.service.ProductService;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 
 @RestController
