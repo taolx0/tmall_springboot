@@ -38,7 +38,7 @@ public class OtherInterceptor implements HandlerInterceptor {
         }
         List<Category> cs = categoryService.list();
         String contextPath = request.getServletContext().getContextPath();
-        System.out.println("postHandle contextPath:" + contextPath);
+//        System.out.println("postHandle contextPath:" + contextPath);
         request.getServletContext().setAttribute("categories_below_search", cs);
         session.setAttribute("cartTotalItemNumber", cartTotalItemNumber);
         request.getServletContext().setAttribute("contextPath", contextPath);
